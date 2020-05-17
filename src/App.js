@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Button, H1 } from "./styledd";
+import { ThemeProvider } from "styled-components";
+import Demo from "./side-comp/Demo";
 
 function App() {
+  const themeObj = {
+    primary: "green",
+    warning: "yellow",
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themeObj}>
+      <div className="App">
+        <Button activeColor="green" hoverColor="red">
+          Click me
+        </Button>
+        <H1>Hello From Header 1</H1>
+        <Demo>
+          <p>This is paragraph</p>
+        </Demo>
+      </div>
+    </ThemeProvider>
   );
 }
 
