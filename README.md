@@ -1,1 +1,1 @@
-### Styled-Components Demo app
+### Styled-Components Demo
